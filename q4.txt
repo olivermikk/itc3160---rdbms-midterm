@@ -1,0 +1,1 @@
+select a.firstname ||' '|| a.lastname as Worker_Names, b.projno, b.empid from worker a inner join assign b on a.empid = b.empid where b.projno = 1001 order by a.lastname asc;
