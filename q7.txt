@@ -1,0 +1,3 @@
+SELECT c.firstname, c.lastname, d.departmentname
+FROM project a, assign b, worker c, dept d
+WHERE a.projno = b.projno AND b.empid = c.empid AND d.departmentID = c.departmentid AND b.projno = '1019';
