@@ -1,0 +1,3 @@
+SELECT a.FIRSTNAME ||' '|| a.LASTNAME as Worker_Names, b.Departmentname 
+FROM WORKER a, DEPT b
+where b.Departmentname = 'Accounting' and a.DepartmentID = b.DepartmentID;
