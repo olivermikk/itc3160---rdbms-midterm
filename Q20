@@ -1,0 +1,14 @@
+CREATE TRIGGER update_numEmployeesAssigned
+AFTER INSERT ON Assign
+FOR EACH ROW
+BEGIN
+    UPDATE project
+    SET numEmployeesAssigned = (
+        SELECT COUNT(empid) AS myCount
+        FROM Assign
+        WHERE Assign.Projno = project.Projno
+        GROUP BY Projno
+        HAVING COUNT(empid) > 0
+    )
+    WHERE project.Projno = :NEW.Projno;
+END;
