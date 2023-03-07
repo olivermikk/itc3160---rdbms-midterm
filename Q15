@@ -2,3 +2,4 @@ SELECT a.firstname, b.departmentid
 FROM worker a
 INNER JOIN dept b ON a.departmentid = b.departmentid
 WHERE a.empid NOT IN (SELECT DISTINCT empid FROM project);
+--NEEDS TO BE CHECKED
