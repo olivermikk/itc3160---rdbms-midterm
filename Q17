@@ -1,0 +1,18 @@
+– First add the new column
+ALTER TABLE PROJECT
+ADD STATUS varchar(50);
+
+– Set all to be active and change two to be completed or canceled
+UPDATE PROJECT
+SET STATUS = 'ACTIVE';
+
+UPDATE PROJECT
+SET STATUS = 'COMPLETED'
+WHERE PROJNO = '1001';
+
+UPDATE PROJECT
+SET STATUS = 'CANCELED'
+WHERE PROJNO = '1032';
+
+– Select the view that shows the active projects
+SELECT * FROM PROJECT WHERE STATUS = 'ACTIVE';
