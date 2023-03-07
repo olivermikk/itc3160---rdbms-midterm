@@ -1,0 +1,4 @@
+CREATE VIEW Q9VIEW AS
+SELECT a.projno, a.projname, b.empid, c.firstname, c.lastname
+FROM project a, assign b, worker c
+WHERE a.projno = b.projno AND b.empid = c.empid;
