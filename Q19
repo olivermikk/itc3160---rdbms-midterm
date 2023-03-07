@@ -1,0 +1,9 @@
+ALTER TABLE project ADD numEmployeesAssigned VARCHAR(20);
+
+UPDATE project
+SET numEmployeesAssigned = (
+  SELECT COUNT(empid) AS myCount
+  FROM Assign
+  WHERE Assign.Projno = project.Projno
+  GROUP BY Projno
+  HAVING COUNT(empid) > 0);
