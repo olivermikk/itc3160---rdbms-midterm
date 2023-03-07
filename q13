@@ -1,0 +1,3 @@
+SELECT a.projno, b.empid, c.firstname, c.lastname
+FROM project a, assign b, worker c
+WHERE b.projno = a.projno AND b.empid = c.empid AND a.STARTDATE > ('1-SEP-21');
